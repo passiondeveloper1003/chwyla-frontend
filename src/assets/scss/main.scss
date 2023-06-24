@@ -1,0 +1,46 @@
+@import '~plyr/dist/plyr.css';
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+$color--primary: #000000;
+$color--secondary: #FFFFFF;
+$color--black: #000000;
+$color--white: #FFFFFF;
+$color--grey: #6E6E6E;
+$color--light-grey: #BCBEC0;
+$color--bg-grey: #787A7A;
+$font--primary: 'Manrope', sans-serif;
+$font: $font--primary;
+
+$content-width: 1296px;
+
+$gutter-width--mobile: 24px;
+$gutter-width--desktop: 48px;
+
+@import 'global/mixins';
+@import 'global/normalize';
+@import 'global/form';
+@import 'global/base';
+@import 'global/button';
+
+@import 'components/header';
+@import 'components/off-canvas';
+@import 'components/page-banner';
+@import 'components/team-archive';
+@import 'components/blog-archive';
+@import 'components/property-archive';
+@import 'components/featured-properties';
+@import 'components/article';
+@import 'components/property';
+@import 'components/profile';
+@import 'components/title-content-image';
+@import 'components/footer';
+@import 'components/video';
+@import 'components/search';
+@import 'components/column-content';
+@import 'components/cta';
+@import 'components/contact';
+@import 'components/basic-page';
+@import 'components/card';
+@import 'components/related';
+@import 'components/appraisal';

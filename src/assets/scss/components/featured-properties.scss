@@ -1,0 +1,59 @@
+.featured-properties {
+  padding: 0 0 40px;
+  @include breakpoint(medium) {
+    padding: 0 0 80px;
+  }
+  &__inner {
+    @include inner;
+  }
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 20px;
+    width: 100%;
+    h3 {
+      margin-bottom: 0;
+      @include paragraph-02(400);
+    }
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    @include breakpoint(medium) {
+      gap: 40px;
+    }
+    .card {
+      width: 100%;
+      @include breakpoint(medium) {
+        width: calc(50% - 20px);
+      }
+      &:first-of-type {
+        width: 100%;
+        .card__stats {
+          @include breakpoint(medium) {
+            margin-top: 0;
+            width: auto;
+          }
+        }
+        .card__image {
+          @include breakpoint(medium) {
+            img {
+              width: 100%;
+              aspect-ratio: 2 / 1;
+              object-fit: cover;
+            }
+            .card__sold {
+              svg {
+                width: 254px;
+                height: 68px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

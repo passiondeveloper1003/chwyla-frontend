@@ -1,0 +1,45 @@
+.property-archive {
+  &__inner {
+    @include inner;
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 40px;
+    @include breakpoint(medium) {
+      gap: 40px;
+      padding-bottom: 80px;
+    }
+    .card {
+      width: 100%;
+      @include breakpoint(medium) {
+        width: calc(50% - 20px);
+      }
+      &:first-of-type {
+        width: 100%;
+        .card__stats {
+          @include breakpoint(medium) {
+            margin-top: 0;
+            width: auto;
+          }
+        }
+        .card__image {
+          @include breakpoint(medium) {
+            img {
+              width: 100%;
+              aspect-ratio: 2 / 1;
+              object-fit: cover;
+            }
+            .card__sold {
+              svg {
+                width: 254px;
+                height: 68px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

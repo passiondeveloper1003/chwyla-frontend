@@ -1,0 +1,214 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	background: var(--headerBgColour);
+	border-bottom: 1px solid var(--headerBorderColour);
+	z-index: 5;
+	&__inner {
+		@include inner;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		height: 66px;
+		@include breakpoint(medium) {
+			height: 66px;
+		}
+	}
+	&__logo {
+		svg {
+			display: block;
+			@include breakpointdown(medium) {
+				width: 150px;
+				height: 16px;
+			}
+			path {
+				fill: var(--headerColour);
+			}
+		}
+	}
+	&__nav {
+		display: none;
+		@include breakpoint(medium) {
+			display: block;
+		}
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				margin: 0 42px 0 0;
+				@include paragraph-01(500);
+				position: relative;
+				&:last-of-type {
+					margin-right: 0;
+				}
+				a {
+					text-decoration: none;
+					color: var(--headerColour);
+				}
+				button {
+					background: none;
+					color: var(--headerColour);
+					padding: 0;
+					border: none;
+					cursor: pointer;
+				}
+				ul {
+					position: absolute;
+					top: 100%;
+					opacity: 0;
+					visibility: hidden;
+					padding: 32px 24px 8px;
+					background: var(--headerBgColour);
+					left: -24px;
+					transition: all ease 0.3s;
+					li {
+						display: block;
+						margin-bottom: 14px;
+					}
+				}
+				&:hover {
+					ul {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+		}
+		&--right {
+			ul {
+				justify-content: flex-end;
+				li {
+					margin: 0 0 0 42px;
+					&:first-of-type {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+	&__hamburger {
+		display: block;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		.close {
+			text-align: right;
+			color: var(--headerColour)
+		}
+		.lines {
+			width: 26px;
+			position: relative;
+			height: 11px;
+			display: block;
+			&:before {
+				width: 100%;
+				height: 2px;
+				background: var(--headerColour);
+				position: absolute;
+				top: 0;
+				right: 0;
+				content: '';
+			}
+			&:after {
+				width: 100%;
+				height: 2px;
+				background: var(--headerColour);
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				content: '';
+			}
+		}
+		@include breakpoint(medium) {
+			display: none;
+		}
+	}
+	&--scrolled, &--active {
+		background: $color--grey;
+		border-bottom: 1px solid #808080;
+		.header {
+			&__logo {
+				svg {
+					path {
+						fill: $color--white;
+					}
+				}
+			}
+			&__hamburger {
+				.lines {
+					&:before {
+						background: $color--white;
+					}
+					&:after {
+						background: $color--white;
+					}
+				}
+			}
+			&__nav {
+				ul {
+					li {
+						a {
+							color: $color--white;
+						}
+						ul {
+							background: $color--grey;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.page-template--home {
+	.header--intro-active {
+		opacity: 0;
+	}
+}
+
+.page-template--error {
+	.basic-page {
+		padding: 80px 0;
+		@include breakpoint(medium) {
+			padding: 160px 0;
+		}
+	}
+	.header {
+		&__logo {
+			svg {
+				path {
+					fill: $color--black;
+				}
+			}
+		}
+		&__hamburger {
+			.lines {
+				&:before {
+					background: $color--black;
+				}
+				&:after {
+					background: $color--black;
+				}
+			}
+		}
+		&__nav {
+			ul {
+				li {
+					a {
+						color: $color--black;
+					}
+					ul {
+						background: $color--grey;
+					}
+				}
+			}
+		}
+	}
+}

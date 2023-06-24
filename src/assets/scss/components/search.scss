@@ -1,0 +1,197 @@
+.search {
+  padding: 60px 0;
+  @include breakpoint(medium) {
+    padding: 60px 0 30px;
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &.active {
+    .search__form {
+      .form__row--dropdowns {
+        display: flex;
+      }
+    }
+  }
+  .form {
+    width: 100%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    &__row {
+      &--search {
+        position: relative;
+        display: block;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 0;
+        width: 100%;
+        @include breakpoint(medium) {
+          width: calc(25% - 40px);
+          margin-bottom: 35px;
+        }
+        .form__input {
+          width: 100%;
+          border-radius: 0;
+          background: transparent;
+          border: 0;
+          box-shadow: none;
+          font-size: 12px;;
+          color: $color--white;
+          text-transform: normal;
+          padding: 0;
+          font-weight: 400;
+          padding: 14px 0 10px;
+          border-bottom: 1px solid $color--white;
+          &::placeholder {
+            opacity: 1;
+            color: $color--white;
+          }
+          &:focus {
+            outline: 0;
+          }
+          @include breakpoint(medium) {
+            font-size: 14px;
+          }
+        }
+        button {
+          padding: 0;
+          margin: 0;
+          background: transparent;
+          position: absolute;
+          top: 16px;
+          right: 0;
+          border-radius: 0;
+          border: 0;
+          box-shadow: none;
+          @include breakpoint(medium) {
+            top: 16px;
+          }
+          svg {
+            width: 15px;
+            height: 15px;
+            path {
+              fill: $color--white;
+            }
+          }
+        }
+      }
+      &--dropdowns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 12px;
+        width: 100%;
+        @include breakpoint(medium) {
+          margin-top: 0;
+          width: 60%;
+        }
+        .form__select {
+          width: 100%;
+          @include breakpoint(medium) {
+            width: calc(33.333% - 20px);
+          }
+          .react-select {
+            &__control {
+              border: 0;
+              border-radius: 0;
+              box-shadow: none;
+              font-size: 12px;;
+              background: transparent;
+              border-bottom: 1px solid $color--white;
+              cursor: pointer;
+              @include breakpoint(medium) {
+                font-size: 14px;
+              }
+              &--is-focused {
+                outline: 0;
+              }
+              &--menu-is-open {
+                .react-select__indicator {
+                  &:before {
+                    transform: rotate(180deg);
+                  }
+                }
+              }
+            }
+            &__value-container {
+              padding: 0;
+              border: 0;
+              align-items: flex-end;
+              input {
+                color: $color--white !important;
+                font-weight: 400 !important;
+              }
+            }
+            &__input-container {
+              border-radius: 0;
+              text-align: left;
+              padding: 0;
+              margin: 0;
+              flex: unset;
+              display: flex;
+              padding: 14px 0 10px;
+              input {
+                cursor: pointer;
+              }
+            }
+            &__placeholder, &__single-value {
+              text-align: left;
+              font-size: 12px;
+              font-weight: 400;
+              color: $color--white;
+              padding: 14px 0 10px;
+              @include breakpoint(medium) {
+                font-size: 14px;
+              }
+            }
+            &__indicators {
+
+            }
+            &__indicator {
+              &:before {
+                content: '';
+                background-image: url('../images/dropdown.svg');
+                background-size: cover;
+                width: 12px;
+                height: 6px;
+                position: absolute;
+                top: 22px;
+                right: 0;
+              }
+              svg {
+                display: none;
+              }
+            }
+            &__indicator-separator {
+              display: none;
+            }
+            &__menu {
+              margin: 0;
+              border-radius: 0;
+            }
+            &__menu-list {
+              padding: 0;
+              text-align: left;
+            }
+            &__option {
+              padding: 10px 20px;
+              font-size: 12px;
+              font-weight: 400;
+              background: $color--white;
+              color: $color--grey;
+              @include breakpoint(medium) {
+                font-size: 14px;
+              }
+              &--is-focused {
+                background: $color--grey;
+                color: $color--white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.blog-archive {
+  padding: 70px 0;
+
+  @include breakpoint(medium) {
+    padding: 82px 0;
+  }
+
+  &__inner {
+    @include inner();
+  }
+
+  &__items {
+    display: grid;
+    grid-gap: 70px;
+
+    @include breakpoint(medium) {
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+      grid-gap: 81px 91px;
+    }
+  }
+}

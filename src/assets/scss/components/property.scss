@@ -1,0 +1,308 @@
+.property {
+  .card__image {
+    cursor: pointer;
+  }
+  &__inner {
+    @include inner;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__header {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #808080;
+    @include breakpoint(medium) {
+      padding-top: 60px;
+    }
+  }
+  &__main {
+    padding: 60px 0;
+    @include breakpoint(medium) {
+      padding: 120px 0;
+    }
+  }
+  &__content {
+    width: 100%;
+    @include breakpoint(medium) {
+      width: 50%;
+    }
+    h4 {
+      color: $color--white;
+    }
+  }
+  &__contact {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include breakpoint(medium) {
+      width: 40%;
+      max-width: 420px;
+    }
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  &__price {
+    @include paragraph-03(400);
+    color: $color--grey;
+  }
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      margin: 0 20px 20px 0;
+      button, a {
+        padding: 0;
+        background: none;
+        border: none;
+        text-decoration: underline;
+        cursor: pointer;
+        color: $color--white;
+      }
+    }
+  }
+  &__description-wrap {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+  }
+  &__description {
+    max-height: 295px;
+    transition: all ease 0.3s;
+    overflow: hidden;
+    &.active {
+      max-height: 4000px;
+    }
+    p, li {
+      color: $color--white;
+    }
+    p {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__more {
+    display: inline-block;
+    margin-top: 35px;
+    border: 1px solid $color--white;
+    cursor: pointer;
+    @include breakpoint(medium) {
+      margin-top: 50px;
+    }
+  }
+  &__important-dates {
+    width: calc(50% - 20px);
+    h4 {
+      @include paragraph-01(600);
+    }
+    p {
+      button {
+        color: $color--white;
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        text-decoration: none;
+        text-align: left;
+        background: none;
+        svg {
+          display: none;
+        }
+      }
+    }
+  }
+  &__agents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 60px;
+    .card {
+      width: 100%;
+      &__link {
+        display: none;
+      }
+      @include breakpointdown(medium) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        &__image {
+          width: 158px;
+          .gatsby-image-wrapper {
+            margin: 0;
+          }
+          img {
+            display: block;
+          }
+        }
+        &__content {
+          width: calc(100% - 185px);
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .btn {
+          display: inline-block;
+          margin-top: 20px;
+          border: 1px solid $color--white;
+          cursor: pointer;
+        }
+      }
+      &__contact {
+        p {
+          margin: 0;
+          &.email {
+
+          }
+          &.phone {
+            a {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      @include breakpoint(medium) {
+        width: calc(50% - 20px);
+      }
+    }
+  }
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-bottom: 1px solid #808080;
+    padding-bottom: 40px;
+    position: relative;
+    @include breakpoint(medium) {
+      padding-bottom: 70px;
+    }
+  }
+  &__gallery-button {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -18px);
+    border: 1px solid $color--white;
+    cursor: pointer;
+    background: #6E6E6E !important;
+    color: $color--white;
+  }
+  &__image {
+    width: 100%;
+    margin-bottom: 30px;
+    @include breakpoint(medium) {
+      width: calc(50% - 20px);
+      margin-bottom: 40px;
+      &:first-of-type {
+        width: 100%;
+      }
+    }
+    img {
+      width: 100%;
+      margin: 0;
+      display: block;
+    }
+  }
+  &__floorplan-image, &__lightbox-image {
+    height: 90vh !important;
+    width: auto !important;
+  }
+  &__enquire {
+    padding: 60px 0 100px;
+    @include breakpointdown(medium) {
+      .property__inner {
+        flex-direction: column-reverse;
+      }
+    }
+    @include breakpoint(medium) {
+      padding: 110px 0 180px;
+    }
+  }
+  &__form {
+    width: 100%;
+    h4 {
+      margin-bottom: 40px;
+    }
+    @include breakpoint(medium) {
+      width: 40%;
+      max-width: 420px;
+    }
+    .form__row--submit {
+      button {
+        background: #E6E6E6;
+        border: 1px solid #E6E6E6;
+        color: #000;
+      }
+    }
+  }
+  &__map {
+    width: 100%;
+    margin-bottom: 50px;
+    @include breakpoint(medium) {
+      width: 50%;
+      margin-top: 66px;
+      margin-bottom: 0;
+    }
+    .map {
+      display: block;
+      position: relative;
+      img {
+        margin: 0;
+      }
+      .marker {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &__related {
+    .property-archive {
+      &__items {
+        width: 100%;
+        .card {
+          width: 100%;
+          @include breakpoint(medium) {
+            width: calc(50% - 20px);
+            &:first-of-type {
+              width: calc(50% - 20px);
+              .card__stats {
+                @include breakpoint(medium) {
+                  margin-top: 11px;
+                  width: 100%;
+                }
+              }
+              .card__image {
+                img {
+                  width: 100%;
+                  aspect-ratio: 580 / 378;
+                  object-fit: cover;
+                  margin: 0;
+                  display: block;
+                }
+              }
+              .card__sold {
+                svg {
+                  width: 208px;
+                  height: 56px;
+                  margin: 0;
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

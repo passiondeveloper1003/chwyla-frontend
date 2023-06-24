@@ -1,0 +1,127 @@
+.card {
+  &--agent {
+    text-decoration: none;
+    margin-bottom: 40px;
+    display: block;
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+
+    .gatsby-image-wrapper {
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      @include paragraph-02();
+      margin-bottom: 0;
+    }
+
+    p {
+      @include paragraph-01();
+      color: $color--white;
+    }
+  }
+  .slick-dots {
+    left: 15px;
+    bottom: 25px;
+    text-align: left;
+    li {
+      margin: 0;
+      button {
+        margin: 0;
+        &:before {
+          font-size: 10px;
+          color: #DCDCDC;
+          opacity: 0.3;
+        }
+      }
+      &.slick-active {
+        button {
+          &:before {
+            opacity: 1;
+            color: #DCDCDC;
+          }
+        }
+      }
+    }
+  }
+  &__sold {
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    svg {
+      width: 208px;
+      height: 56px;
+      margin: 0;
+      display: block;
+    }
+  }
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    h1, h4 {
+      @include paragraph-02(400);
+      margin: 0;
+    }
+  }
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-top: 11px;
+    span {
+      margin-left: 10px;
+      padding-left: 10px;
+      position: relative;
+      line-height: 1;
+      padding-bottom: 2px;
+      &:first-of-type {
+        border-left: 0;
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+  }
+  &--property {
+    .off-market {
+      width: 100%;
+      @include paragraph-02(400);
+    }
+    a {
+      text-decoration: none;
+    }
+    .card__image {
+      position: relative;
+      img {
+        width: 100%;
+        aspect-ratio: 580 / 378;
+        object-fit: cover;
+        margin: 0;
+        display: block;
+      }
+    }
+  }
+  &--post{
+    text-decoration: none;
+    .card__image {
+      margin-bottom: 17px;
+      img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+    }
+    .card__title {
+      h4 {
+        @include paragraph-02();
+        color: $color--white;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

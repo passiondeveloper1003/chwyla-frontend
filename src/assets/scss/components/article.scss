@@ -1,0 +1,43 @@
+.article {
+  border-bottom: 1px solid $color--light-grey;
+  padding: 20px 0 80px;
+
+  @include breakpoint(medium) {
+    padding: 80px 0 180px;
+  }
+
+  &__inner {
+    @include inner();
+    text-align: center;
+  }
+
+  &__content {
+    max-width: 877px;
+    margin: 0 auto;
+    text-align: left;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .gatsby-image-wrapper {
+    margin-bottom: 50px;
+
+    @include breakpointdown(medium) {
+      img {
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    @include breakpoint(medium) {
+      margin-bottom: 75px;
+    }
+  }
+
+  h1 {
+    margin: 0 auto 37px;
+    text-align: left;
+    max-width: 877px;
+  }
+}

@@ -1,0 +1,29 @@
+.related {
+  padding: 45px 0;
+
+  @include breakpoint(medium) {
+    padding: 91px 0 110px;
+  }
+
+  h2 {
+    margin-bottom: 50px;
+    color: $color--white;
+    @include breakpoint(medium) {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__inner {
+    @include inner();
+  }
+
+  &__items {
+    display: grid;
+    grid-gap: 60px;
+
+    @include breakpoint(medium) {
+      grid-gap: 91px;
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+  }
+}

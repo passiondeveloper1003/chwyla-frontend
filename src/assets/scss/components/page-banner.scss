@@ -1,0 +1,111 @@
+.page-banner {
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 60px;
+  background: $color--primary;
+  @include breakpoint(medium) {
+    margin-bottom: 120px;
+  }
+  &__video, &__bg {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__image {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &--mobile {
+      display: block !important;
+      @include breakpoint(medium) {
+        display: none !important;
+      }
+    }
+    &--desktop {
+      display: none !important;
+      @include breakpoint(medium) {
+        display: block !important;
+      }
+    }
+  }
+  &:before {
+    background: rgba($color--primary, 0.5);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    @include inner;
+    @include breakpoint(medium) {
+     
+    }
+  }
+  &--intro-active {
+    .page-banner__inner {
+      justify-content: center;
+    }
+  }
+  h1, svg {
+    @include title-d1();
+    position: relative;
+    max-width: 345px;
+    text-align: left;
+    z-index: 3;
+    color: $color--secondary;
+    @include breakpoint(medium) {
+      text-align: left;
+      max-width: 365px;
+    }
+  }
+  span {
+    z-index: 3;
+    color: $color--secondary;
+    position: absolute;
+    bottom: 108px;
+    text-align: left;
+    left: 24px;
+    font-size: 12px;
+    @include breakpoint(medium) {
+      bottom: 48px;
+      text-align: center;
+      left: unset;
+      width: 100%;
+      max-width: calc(1196px);
+    }
+    &.button {
+      text-align: center;
+      width: 100%;
+      left: 0;
+      pointer-events: none;
+      max-width: 100%;
+    }
+  }
+  button {
+    z-index: 3;
+    color: $color--secondary;
+    text-align: center;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

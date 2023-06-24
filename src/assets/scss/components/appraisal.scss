@@ -1,0 +1,86 @@
+.appraisal {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease 0.1s;
+  }
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: $gutter-width--mobile;
+    color: #242424;
+    padding: 0;
+    background: none;
+    border: none;
+    z-index: 11;
+    cursor: pointer;
+  }
+  &__form {
+    width: 100%;
+    background: #DCDCDC;
+    color: #242424;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: all ease 0.3s;
+    transform: translateX(100%);
+    @include breakpoint(medium) {
+      width: 650px;
+      box-shadow: 0px -16px 34px rgba(0, 0, 0, 0.25);
+    }
+    h4 {
+      margin-bottom: 40px;
+    }
+    p {
+      color: #242424;
+      margin-bottom: 40px;
+      a {
+        color: #242424;
+      }
+    }
+    .form {
+      &__row {
+        label {
+          color: #242424;
+        }
+        input, textarea {
+          border: 1px solid #B3B3B3;
+          color: #242424;
+          &::placeholder {
+            color: #242424;
+          }
+        }
+        &--submit {
+          button {
+            background: #808080;
+            border-color: #808080;
+            color: $color--white;
+          }
+        }
+      }
+    }
+  }
+  &__form-wrapper {
+    padding: 120px $gutter-width--mobile 60px;
+    @include breakpoint(medium) {
+      padding: 140px 85px;
+    }
+  }
+  &.active {
+    .appraisal__overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+    .appraisal__form {
+      transform: translateX(0);
+    }
+  }
+}

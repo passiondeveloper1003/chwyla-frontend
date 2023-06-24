@@ -1,0 +1,95 @@
+.contact {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  @include breakpoint(medium) {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    flex-direction: row;
+  }
+  &__success {
+    svg {
+      margin-bottom: 30px;
+    }
+    h4 {
+      margin-bottom: 40px;
+      max-width: 327px;
+    }
+  }
+  &__back {
+    padding: 0;
+    background: none;
+    border: none;
+    position: fixed;
+    top: 23px;
+    right: $gutter-width--mobile;
+    z-index: 10;
+    cursor: pointer;
+    color: $color--white;
+  }
+  &__map {
+    width: 100%;
+    @include breakpoint(medium) {
+      width: calc(100vw - 650px);
+    }
+  }
+  .map__wrapper, .map__element {
+    width: 100%;
+    height: 350px;
+    @include breakpoint(medium) {
+      height: 100vh;
+    }
+  }
+  &__form {
+    width: 100%;
+    background: $color--bg-grey;
+    color: $color--white;
+    @include breakpoint(medium) {
+      width: 650px;
+    }
+    svg {
+      margin-bottom: 30px;
+    }
+    h4 {
+      margin-bottom: 40px;
+      max-width: 327px;
+    }
+    .form {
+      &__row {
+        label {
+          color: $color--white;
+        }
+        input, textarea {
+          border: 1px solid $color--white;
+          color: $color--white;
+          &::placeholder {
+            color: $color--white;
+          }
+        }
+      }
+    }
+  }
+  &__form-wrapper {
+    padding: 120px $gutter-width--mobile 60px;
+    @include breakpoint(medium) {
+      padding: 140px 85px;
+    }
+  }
+}
+
+.page-template--contact {
+  .header {
+    background: #787A7A;
+    @include breakpoint(medium) {
+      display: none;
+    }
+    &__hamburger {
+      display: none;
+    }
+  }
+  .footer {
+    display: none;
+  }
+}

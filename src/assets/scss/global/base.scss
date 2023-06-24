@@ -1,0 +1,46 @@
+::selection {
+  color: $color--secondary;
+  background: lighten($color--primary, 10%);
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  color: $color--white;
+  @include paragraph-01(400);
+  background: $color--grey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font;
+  @include subheading(400);
+} 
+
+p, ul, li, ol, div, table {
+  font-family: $font;
+  @include paragraph-01(400);
+}
+
+a {
+  font-family: $font;
+  color: $color--white;
+}
+
+main {
+  padding-top: var(--mainPaddingMobile);
+  @include breakpoint(medium) {
+    padding-top: var(--mainPaddingDesktop);
+  }
+}
+
+.page-template--intro-active.page-template--home {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+

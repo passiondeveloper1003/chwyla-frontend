@@ -1,0 +1,75 @@
+.title-content-image {
+  padding: 0 0 60px;
+
+  @include breakpoint(medium) {
+    padding: 0 0 120px;
+  }
+
+  &__inner {
+    @include inner;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    @include breakpoint(medium) {
+      width: 48%;
+    }
+    h3 {
+      @include paragraph-03();
+      margin-bottom: 44px;
+
+      @include breakpoint(medium) {
+        margin-bottom: 50px;
+      }
+    }
+
+    .btn {
+      margin-top: 44px;
+
+      @include breakpoint(medium) {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  &__content {
+    p {
+      @include paragraph-01();
+      max-width: 465px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 510px;
+    margin-bottom: 40px;
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+      max-width: 510px;
+    }
+  }
+
+  &.reverse {
+    
+    .title-content-image__inner {
+      flex-direction: column-reverse;
+      @include breakpoint(medium) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}

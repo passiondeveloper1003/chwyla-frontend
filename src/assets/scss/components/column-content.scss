@@ -1,0 +1,53 @@
+.column-content {
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+  padding: 60px 0 0;
+  margin-bottom: 60px;
+
+  @include breakpoint(medium) {
+    padding: 100px 0;
+    margin-bottom: 120px;
+  }
+
+  &__inner {
+    @include inner();
+  }
+
+  &__items {
+    @include breakpoint(medium) {
+      gap: 90px;
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 60px;
+
+    @include breakpoint(medium) {
+      margin-bottom: 0;
+    }
+
+    .gatsby-image-wrapper {
+      margin-bottom: 35px;
+    }
+
+    h3 {
+      @include paragraph-03();
+      color: $color--white;
+      margin-bottom: 28px;
+    }
+
+    p {
+      @include paragraph-01();
+      color: $color--white;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 28px;
+    }
+    button {
+      border: 1px solid $color--white;
+      cursor: pointer;
+    }
+  }
+}
